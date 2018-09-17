@@ -286,11 +286,11 @@ body
 <li>There are many rows with subheadings such as ADC or Admin training but have empty cells in the rest of the row. It would not be efficient to delete each row, there’s hundreds of them.</li>
 <li>To deal with this issue we could sort the data. Pick a column other than A (it has no empty cells) For example, Click in column C, choose the Sort button on Data ribbon.</li>
 </ul>
-<p><img src="./img/19.png" alt=""></p>
+<p><img src="./img/19.PNG" alt=""></p>
 <ul>
 <li>If it asks then choose Expand selection. Then choose sort by Department in A to Z. Note, Excel recognises &#39;My data has headers&#39; so row 1 does not get involved in the sort.</li>
 </ul>
-<p><img src="./img/20.png" alt=""></p>
+<p><img src="./img/20.PNG" alt=""></p>
 <p>The titles if you investigate are at the bottom of the sheet. If you press Ctrl End you will see them, and delete them if you wish.</p>
 
       </div>
@@ -306,11 +306,11 @@ body
 <li>In column E we&#39;ve got all three of the date parts, but in a different layout. The key to converting these many times is a combination of using a function called DATE as displayed in this generic form here in cell B1 and also some of the text functions, like left and right, that allow us to extract data from the left side or right side of a cell.</li>
 </ul>
 <p>See the format below:</p>
-<p><img src="./img/21.png" alt=""></p>
+<p><img src="./img/21.PNG" alt=""></p>
 <ul>
 <li>The key to converting these many times is a combination of using a function called DATE as displayed in this generic form here in cell B1 and also some of the text functions, like left and right, that allow us to extract data from the left side or right side of a cell.</li>
 </ul>
-<p><img src="./img/22.png" alt=""></p>
+<p><img src="./img/22.PNG" alt=""></p>
 <ul>
 <li><p>In cell B2:  =date ... link to the year out of cell A2. To access the four right-most characters, we use the function right. Cell A2 comma 4, meaning pull out those four right-most characters, that&#39;s the year.</p>
 </li>
@@ -321,17 +321,17 @@ body
 <li><p>We might also need something almost the same in column D. Since this formula we just created is based on the cell to its left, we can copy this formula we just created in column B. We’ve a different layout. So you can edit it as follows:</p>
 </li>
 </ul>
-<p><img src="./img/23.png" alt=""></p>
+<p><img src="./img/23.PNG" alt=""></p>
 <ul>
 <li>In column E the date is formatted differently, it includes the 3 parts to the date. Notice J and K showing each month and sequence – this could be helpful here.</li>
 <li>To input a formula in F1 to format column E we could use a lookup table to somehow come up with the actual numbers. E.g., September is nine, the ninth month and so on. This is done inside out here. So in cell E2, how to get Sep to recognise as ‘9’.</li>
 <li>Use a function called Mid. ‘6’ represents the space where ‘S’ for Sep starts in cell E2. ‘3’ represents the 3 characters – ‘Sep’. Hit enter, that will give us ‘Sep’ in cell F2.</li>
 </ul>
-<p><img src="./img/24.png" alt=""></p>
+<p><img src="./img/24.PNG" alt=""></p>
 <ul>
 <li>To replace the ‘Sep’ with ‘9’, we use the Vlookup function. The purpose of the Vlookup is: I&#39;ve got a value somewhere, in other words for Sep…I want to compare it with a table of data somewhere. That table in this example is over in columns J and K. See function format below:</li>
 </ul>
-<p><img src="./img/25.png" alt=""></p>
+<p><img src="./img/25.PNG" alt=""></p>
 <ul>
 <li><p>Start with:
 {{{
@@ -341,19 +341,19 @@ body
 <li><p>The ‘2’ means the second column which is ‘K’ and ‘FALSE’ means – choosing exact match. If all goes well, it should have ‘9’ as the answer. Convert this to Number – general format from home ribbon. Just to test this in column ‘F’, autofill down this column ‘F’ to see if it picked up the month as the numerical field:</p>
 </li>
 </ul>
-<p><img src="./img/26.png" alt=""></p>
+<p><img src="./img/26.PNG" alt=""></p>
 <ul>
 <li>All that, to come up with a month!! To format the Date in column E – edit the formula as follows:</li>
 </ul>
-<p><img src="./img/27.png" alt=""></p>
+<p><img src="./img/27.PNG" alt=""></p>
 <ul>
 <li>At different times your going to have to go to these unusual lengths to achieve Date formatting:</li>
 </ul>
-<p><img src="./img/28.png" alt=""></p>
+<p><img src="./img/28.PNG" alt=""></p>
 <ul>
 <li>To clean up the columns, we won’t want the original column now that we have reformatted. To quickly copy, bring your mouse to any edge of column F, hold it, begin to move it to next column, click right button of mouse to choose option with copying.</li>
 </ul>
-<p><img src="./img/29.png" alt=""></p>
+<p><img src="./img/29.PNG" alt=""></p>
 
       </div>
      
