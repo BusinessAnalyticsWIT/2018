@@ -181,12 +181,6 @@ body
         </a>
       
     
-      
-        <a class="item" href="../../topic-03-Data-Discovery/book-c/index.html">
-          Lab-05
-        </a>
-      
-    
   </div>
   <div class="pusher" tabindex="-1">
     <div class="ui basic segment" id="labchat">
@@ -242,14 +236,14 @@ The median is the same as the 50th percentile and the second quartile that we co
      
       <div  class="ui tab segment lab" data-tab="02">
         <h1>Measures of Dispersion</h1>
-<p>Dispersion refers to the degree of variation in the data, that is, the numerical spread of the data. For instance comparing the histograms of the facebook data clearly shows more variation in Friends than in the number of hours online/week. </p>
+<p>Dispersion refers to the degree of variation in the data, that is, the numerical spread of the data. For instance comparing the histograms of the facebook data clearly shows more variation in Friends than in the number of hours online/week.</p>
 <p>The range is the simplest maesurement of dispersion. It is computed as the difference between the maximum and the minimum value in the data set. Although Exel does not provide a range function you can use the combination of the MIN(data range) and MAX(data range) functions to get the answer.</p>
 <p>To avoid outliers, the interquartile (IQR) is often used, which is simply Q3-Q1. This range is the middle 50% of the data.</p>
 <p>A more commonly used measure of dispersion is the variance, whose computation depends on all the data. The larger the variance, the more the data are &quot;spread out&quot; from the mean, and the more variability one can expect in the observations.</p>
-<p>The formula used to calculate the variance is different for populations and samples. </p>
+<p>The formula used to calculate the variance is different for populations and samples.</p>
 <p>The function VAR.S(data range) may be used to compute the sample variance.
 The function VAR.P(data range) may be used to compute the population variance.</p>
-<p>A related measure which is perhaps the most popular and useful measure of dispersion, is the standard deviation, which is defined as the square root of the variance. </p>
+<p>A related measure which is perhaps the most popular and useful measure of dispersion, is the standard deviation, which is defined as the square root of the variance.</p>
 <p>The Excel function STDEV.S(data range) caculates the standard deviation for a sample.
 The Excel function STDEV.P(data range) caculates the standard deviation for a population.</p>
 <p>Using these functions for the facebook survey data, we find that the sample variance for hours online/week is 9.81 and the sample standard deviation is 3.13, and that the sample variance for the number of friends is 17996.78 and the sample standard deviation is 134.15.</p>
@@ -258,7 +252,7 @@ The Excel function STDEV.P(data range) caculates the standard deviation for a po
 <p>Open the excel file <a href="./archives/closing_stock_prices.xlsx">Closing Stock Prices</a>
 Calculate the average (mean) and standard deviation (sample) for each company, IBM, INTC etc. The last column is the Dow Jones Industrial average over a one month period.</p>
 <p>The average closing stock price for Intel (INTC) and General Electric (GE) are quite similar at $18.81 and $16.19 respectively. However the standard deviation of INTC&#39;s price over the time frame was $0.50, while GE&#39;s was $0.35. GE had less variability and, therefore, less risk.</p>
-<p>A larger standard deviation implies that while a greater potential exists of a higher return, there is also greater risk of realising a lower return. Many investment publications and web sites provide stadard deviations of stocks and mutual funds to help investors assess risk in this way.</p>
+<p>A larger standard deviation implies that while a greater potential exists of a higher return, there is also greater risk of realising a lower return. Many investment publications and web sites provide standard deviations of stocks and mutual funds to help investors assess risk in this way.</p>
 <p>One of the most important results in statistics is Chebyshev&#39;s theorem.
 For any set of data, a proportion of values lie within a certain number of standard deviations of the mean.
 The empirical rules from this theorem may be applied as such:</p>
@@ -275,7 +269,8 @@ standard deviation = 134.15
 
 One standard deviation below the mean: 176.97 - 134.15 = 42.82
 One standard deviation above the mean: 176.97 + 134.15 = 311.12</code></pre>
-<p>If we count the number of observations in the range from 42.48 and 311.12 we find 25 out of the 33 observations lie in that area. Thus 75.8% of students fall within one standard deviation of the mean.</p>
+<p>If we count the number of observations in the range from 42.48 and 311.12 we find 25 out of the 33 observations lie in that area. Thus 75.8% of students fall within one standard deviation of the mean.
+You can use the COUNTIF or COUNTIFS function in excel to help with this task. Look up the help in Excel for the correct syntax.</p>
 <p>How may students fall within 2 standard deviations of the mean in the facebook data?</p>
 <p>Calculate the obserations that fall within one, two and three standard deviations of the mean for each of the stocks in Closing Stock Prices. How do they compare with the empirical rules?</p>
 
@@ -306,7 +301,7 @@ On the other hand, for the facebook data, the mode occurs in the bin 50-100 frie
 <p>Data are often expressed as percentiles and quartiles. You are no doubt familiar with percentiles from standardised tests such as those used for college enterance exams. Percentiles specify the percentage of other test takers who scored at or below the score of a particular individual.</p>
 <p>Generally the kth percentile is a value at or below which at least k percent of the observations lie. There is not a standardised method for calculating the kth percentile. However the most common is as follows:</p>
 <p>First order the N data values from smallest to largest and calculate the rank of the kth percentile using the following formula:</p>
-<pre><code>Nk/100 + 0.5 
+<pre><code>Nk/100 + 0.5
 
 rounded to the nearest integer</code></pre>
 <p>Then you take the value corresponding to that rank as the kth percentile.</p>
@@ -322,14 +317,13 @@ percentile.inc(e4:e36,0.9) = 396
 
 this gives the 90th percentile as 396 or rounded to 400.</code></pre>
 <p>Quartiles represent the 25th percentile (called the first quartile, Q1), 50th percentile (second quartile, Q2), 75th percentile (third quartile, Q3), and the 100th percentile (fourth quartile, Q4). One-forth of the data is below the first quartile, and two-forths of the data are below the second quartile.</p>
-<p>For example in the facebook data, </p>
+<p>For example in the facebook data,</p>
 <p>quartile.inc(e4:e36,1) = 80 = Q1
 This means 25% of the data falls below 80 Friends.</p>
 <p>quartile.inc(e4:e36,3) = 250 = Q3
 This means 75% of the data falls below 250 Friends.</p>
 <p>We can extend these ideas to other divisions of the data. For example, deciles divide the data into 10 sets: the 10th percentile, 20th percentile, and so on. If you want the 10th percentile then you can use the percentile.inc formula with 0.1 in the formula.</p>
 <p>All these types of measures are called data profiles or fractiles.</p>
-<p>(the same information can be seen in your cumulative relative frequency column)</p>
 
       </div>
      
@@ -337,7 +331,7 @@ This means 75% of the data falls below 250 Friends.</p>
         <h1>Descriptive Statistics for categorical data</h1>
 <p>Statistics such as mean and variance are not appropriate for categorical data. Instead we are generally interested in the fraction of data that have a certain characteristic. The formal statistical measure is called the sample proportion, usually denoted as p. Proportions are key descriptive statistics for categorical data, such as defects or errors in quality control applications or consumer preferences in market research.</p>
 <p>For example the facebook data in column B lists the gender of each respondent. The proportion of females is p = 20/33 = 0.606. The Excel function COUNTIF(data range, criteria) is useful in determining how many observations meet specified characteristics. For instance, to find the number of females, we used the function =COUNTIF(B4:B36,&quot;female&quot;). The criteria can be numerical , such as &quot;&gt;15&quot; or &quot;=0&quot; and so on.</p>
-<p>A cross tabulation is a basic statistical tool used to summarise categorical data. It is a tabular method that displays the number of observations in a data set for different subcategories of two categorical variables. The subcategories of the variables must be mutually exclusive and exhaustive, meaning that each observation can be classified into only one subcsategory and taken together over all subcategories, they must constitute the complete data set. A cross tab is also called a contingency table.</p>
+<p>A cross tabulation is a basic statistical tool used to summarise categorical data. It is a tabular method that displays the number of observations in a data set for different subcategories of two categorical variables. It is also known as a frequency distribution as it shows us the frequency of the occurances of each category. In this case the number of females and males with a level of views per day. The subcategories of the variables must be mutually exclusive and exhaustive, meaning that each observation can be classified into only one subcategory and taken together over all subcategories, they must constitute the complete data set. A cross tab is also called a contingency table.</p>
 <p>If we want to identify the number of students who are in the different categories of views/day by Gender in the facebook data. If we convert the data into the proportions of each views/day group for females and males, we obtain the result shown below in table 2.6:</p>
 <p><img src="./img/39.png" alt=""></p>
 <p>We can also convert the values to proportions of each views/day for females and males, we can see the result in the above table 2.7
@@ -347,7 +341,15 @@ It states that 30% of females are in the 1-5 views/day group, and that 20% of ma
       </div>
      
       <div  class="ui tab segment lab" data-tab="Exercises">
-        <h1>Exercises</h1>
+        <h1>Solutions</h1>
+<p>Last weeks lab solutions:</p>
+<ul>
+<li><p><a href="./archives/accounting-solution.xlsx">Accounting solution</a></p>
+</li>
+<li><p><a href="./archives/PowerPivotlesson_solution.xlsx">Power Pivot</a></p>
+</li>
+</ul>
+<h1>Exercises</h1>
 <p>Compute the mean, median, variance and standard deviation for all the variables in the file <a href="./archives/national_football_league.xlsx">National Football League</a></p>
 <p>The file <a href="./archives/Burglaries.xlsx">Burglaries</a> contains data on the number of burglaries before and after a Citizen Police program. Apply the descriptive statistics tool to these sets of data. What shows in the data? are there differences? What proportion of observations fall within one standard deviation of the mean, does that proportion increase or decrease between the two data sets?</p>
 <p>The file <a href="./archives/self_esteem.xlsx">self esteem</a> provides data on self esteem scores for randomly selected indiviuals with disabilities, it also includes the individuals marital status, length of work, type of support received, education and age.
