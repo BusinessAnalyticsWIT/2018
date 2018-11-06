@@ -7,6 +7,8 @@
 
      
 
+     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
@@ -148,6 +150,7 @@ body
 
 <div class="ui segment pushable">
   <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <br><br>
     
       
         <a class="item" href="../../topic-02-BA-Intro/book-0-Excel-basics/index.html">
@@ -192,7 +195,7 @@ body
       
     
       
-        <a class="item" href="../../topic-05-Charting-Dashboards/book-dashboards/index.html">
+        <a class="active item" href="../../topic-05-Charting-Dashboards/book-dashboards/index.html">
           Lab-08
         </a>
       
@@ -319,20 +322,20 @@ window with multiple tabs. Click on the Control tab,  in the format control wind
 the name of the month we&#39;re looking at.</p>
 <p>There is a separate worksheet called Form Control Output which will take the control output and use a formula to get the correct abbreviated month displayed in cell C7. If you navigate to the Form Control Output tab, you see that there&#39;s a table with the 12 months and their corresponding number.</p>
 <p><img src="./img/16.png" alt=""></p>
-<p>We will link the Spin button output to cell B3 in this tab. Then we&#39;re going to use this in combination with the table below it to calculate the corresponding month. Note that cell B2 is in a named range called month_selected FC.</p>
+<p>We will link the Spin button output to cell B3 in this tab. Then we&#39;re going to use this in combination with the table below it to calculate the corresponding month. Note that cell B2 is in a named range called month_selectedFC.</p>
 <p>Go back to configure the Spin button. Select the Spin button and then right-click to bring up the menu, choose Format Control. Navigate to the Control tab and set the minimum value to 1 and then set the maximum value to 12 set the incremental change box to 1. Link the output from the Spin button to cell B3 in our previous tab. We do this by clicking in the cell link box then navigating to the other tab, clicking on cell B3, and then selecting OK to confirm the changes.</p>
-<p>Now that the link is established between the Month of Flight Spin button and the Month_Selected FC-named range on the Form Control Output, let&#39;s translate the numerical output to an abbreviated month. To translate between the numerical
+<p>Now that the link is established between the Month of Flight Spin button and the Month_SelectedFC named range on the Form Control Output, let&#39;s translate the numerical output to an abbreviated month. To translate between the numerical
 data and the text data, we&#39;ll use the VLOOKUP Formula. Using the abbreviated month rather than the numerical output of the Spin button gives a more informative output for the end user. Go back to the Form Control Output tab. We&#39;re going to use a VLOOKUP formula in cell C3 to look up the value in cell B3 in the table below and retrieve the associated abbreviated month. In cell C3 and type :</p>
 <pre><code>
-=VLOOKUP(B3,B4:C15,2,FALSE)</code></pre>
-<p>The first argument is the lookup value which is cell B2. The lookup array is B4:C15. We want to retrieve the value from
+=VLOOKUP(B3,B5:C16,2,FALSE)</code></pre>
+<p>The first argument is the lookup value which is cell B2. The lookup array is B5:C16. We want to retrieve the value from
 the second column in the data table. So we&#39;ll input 2 here. You want only exact results, so type in FALSE, and then close the formula and press Enter. As you can, see the formula successfully translates the number in cell B2 into an abbreviated month. Go back to the previous tab and select cell C7 where we want to put our abbreviated month. Create a direct link by typing equals and then use the cursor to go back to the Form Control Output tab, select cell C3 and then press Enter to confirm.</p>
 <p>Test the link by clicking on the spin button.</p>
 <p><img src="./img/17.png" alt=""></p>
-<p>Next we work on the columns below the spin buttons. In cell C40, we want to provide the average delay for the Chicago to Atlanta route in the year and month that were selected using our Spin buttons. We can do this by selecting only the applicable values in the departure delay data table in calculating their average. The conditions for selecting the values
+<p>Next we work on the columns below the spin buttons. In cell C10, we want to provide the average delay for the Chicago to Atlanta route in the year and month that were selected using our Spin buttons. We can do this by selecting only the applicable values in the departure delay data table in calculating their average. The conditions for selecting the values
 will be based on the routes in column B, as well as the year and month that can be found right above the table.</p>
 <p>We&#39;re going to use the AVERAGEIFS function to select the values and calculate the average departure delay.</p>
-<p>In cell C40 Type</p>
+<p>In cell C10 Type</p>
 <pre><code>
 =AVERAGEIFS(Flights[DepartureDelay],Flights[FlightMonth],Month_SelectedFC,Flights[FlightYear],flight_year,Flights[Route],B40)</code></pre>
 <p>The first argument is the range of values that we&#39;d like to calculate our averages on, which can be found in the Airline Flights tab. When typing in the function you can navigate to the tab and select the Departure Delays in column C. Type a comma, then Excel prompts us to specify the conditions to be used in order to calculate the average we&#39;re looking for. The first condition is going to be the flight month. So let&#39;s go to the Airline Flights tab. The months can be found in column H. So let&#39;s select those values. In order to place a condition on this column, we need to define a selection criteria. This is going to be where our Spin button comes in. Navigate to the Form Control tab and select cell B3 as our criteria. We also want to create a selection based on the flight year. So let&#39;s go back to the Airline Flights tab. The years can be found in column I. The selection criteria is going to be the year from the CF &amp; KPI tab. So we go back there, and click on C5.</p>
@@ -354,7 +357,7 @@ the target metrics established by the COO. Click OK to validate our changes.</p>
 the route of the flight. We need to select the Route column. In the Airline Flights tab Click cell B2, and then on the keyboard Ctrl+Shift+Down and type a comma. Finally, select cell B10, close parentheses, and hit Enter.</p>
 <p><img src="./img/19.png" alt=""></p>
 <p>The number returned as a result is the number of flights for Chicago to Atlanta in April, 2014. Copy the formula down for the remaining routes. Next, let&#39;s apply Conditional Formatting to the Number of Flights values so the audience can quickly
-compare between routes. Before we get started with formatting, let&#39;s also place the results in the cells adjacent to the number of flights. We want to do this because we&#39;re going to place data bars in column E, but we only want the bars to be visible. Type = in cell E40. Then click cell D40. Copy the formula down to the bottom. Next select E40 to E44. Click the Conditional Formatting button on the Home tab and hover over Data Bars from the drop down. Select more rules from
+compare between routes. Before we get started with formatting, let&#39;s also place the results in the cells adjacent to the number of flights. We want to do this because we&#39;re going to place data bars in column E, but we only want the bars to be visible. Type = in cell E10. Then click cell D10. Copy the formula down to the bottom. Next select E10 to E14. Click the Conditional Formatting button on the Home tab and hover over Data Bars from the drop down. Select more rules from
 the pop-up window and choose Format cells based on their values. Next, check the Show Bar Only box. Change the fill color using the color drop-down and click OK.</p>
 <p>The reason we have our data in column D and our formatting in column E is because the data bars can overshadow the data, and vice versa. So separating makes each element more clear and effective. Before we finish, let&#39;s check to make
 sure our controls and formulas work. Change the flight month using the Form Control and the formulas and Conditional Formatting should change.</p>
